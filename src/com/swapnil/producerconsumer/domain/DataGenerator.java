@@ -34,7 +34,7 @@ public abstract class DataGenerator <T> implements Producer {
 		log.info("Data Generator Thread Received : "+t);
 		this.sharedEntity.put(t);
 	}
-	protected void initlizeQque(LinkedBlockingQueue<T> list){
+	protected void initializeQueue(LinkedBlockingQueue<T> list){
 		this.sharedEntity = list;
 		log.info("Data Generator thread linked to the shared BlockingQueue.");
 	}

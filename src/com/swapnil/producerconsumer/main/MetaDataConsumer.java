@@ -20,7 +20,7 @@ public class MetaDataConsumer extends DataConsumer<SharedEntity> {
 	
 	public MetaDataConsumer(LinkedBlockingQueue<SharedEntity> list) {
 		log.info("Consumer Initlized.");
-		super.initlizeQque(list);
+		super.initializeQueue(list);
 		super.linkChildObject(this);
 	}
 	@Override

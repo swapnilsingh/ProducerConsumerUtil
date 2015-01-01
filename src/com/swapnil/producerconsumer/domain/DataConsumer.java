@@ -36,7 +36,7 @@ public abstract class DataConsumer <T> implements Consumer {
 		}
 		log.info("Data Consumer Thread Stopped");
 	}
-	protected void initlizeQque(LinkedBlockingQueue<T> list){
+	protected void initializeQueue(LinkedBlockingQueue<T> list){
 		this.sharedEntity = list;
 		log.info("Data Consumer thread linked to the shared BlockingQueue.");
 	}

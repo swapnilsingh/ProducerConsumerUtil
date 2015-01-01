@@ -24,7 +24,7 @@ public class MetaDataProducer extends DataGenerator<SharedEntity> {
 	 */
 	public MetaDataProducer(LinkedBlockingQueue<SharedEntity> list,MetaDataConsumer metaDataConsumer) {
 		log.info("Producer Initlized");
-		super.initlizeQque(list);
+		super.initializeQueue(list);
 		this.metaDataConsumer = metaDataConsumer;
 	}
 
@@ -46,7 +46,7 @@ public class MetaDataProducer extends DataGenerator<SharedEntity> {
 	 */
 	@Override
 	public void performTask() throws InterruptedException {
-		for(int i=1;i<=1000;i++){
+		for(int i=1;i<=10;i++){
 			push(new MetaDataSharedEntiry(i,Integer.toString(i)+"_Name"));
 		}
 		this.metaDataConsumer.setLiveFlag(false);
