@@ -8,7 +8,6 @@ package com.swapnil.producerconsumer.interfaces;
  *
  */
 public interface ProducerConsumerService {
-	
 	public void startService() throws InterruptedException;
 
 }

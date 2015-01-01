@@ -40,6 +40,6 @@ public class ProducerConsumerServiceImpl implements ProducerConsumerService {
 		producerThread.start();
 		consumerThread.start();
 		this.producer.performTask();
-		//this.consumer.performTask();
+		this.consumer.performTask();
 	}
 }

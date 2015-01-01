@@ -8,6 +8,5 @@ package com.swapnil.producerconsumer.interfaces;
  *
  */
 public interface Producer extends Runnable {
-	public void stopProducerThread(Boolean flag);
 	public void performTask() throws InterruptedException;
 }

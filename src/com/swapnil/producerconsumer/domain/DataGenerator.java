@@ -28,10 +28,10 @@ public abstract class DataGenerator <T> implements Producer {
 		while(liveFlag && this.sharedEntity.isEmpty()){
 			
 		}
-		log.info("Data Generator Thread Stopped.");
+		log.info("Data Generator Thread Processing Finished.");
 	}
 	protected void push(T t) throws InterruptedException{
-		log.info("Data Generator Thread Received : "+t);
+		log.debug("Data Generator Thread Received : "+t);
 		this.sharedEntity.put(t);
 	}
 	protected void initializeQueue(LinkedBlockingQueue<T> list){

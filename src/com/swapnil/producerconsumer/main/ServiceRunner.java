@@ -28,7 +28,6 @@ public class ServiceRunner {
 		MetaDataProducer metaDataProducer = new MetaDataProducer(blockingQeque,metaDataConsumer);
 		ProducerConsumerService producerConsumerService = new ProducerConsumerServiceImpl(metaDataProducer,metaDataConsumer);
 		producerConsumerService.startService();
-		//producerConsumerService.stopService();
 	}
 
 }

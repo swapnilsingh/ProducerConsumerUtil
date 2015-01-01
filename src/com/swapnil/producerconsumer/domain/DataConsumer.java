@@ -34,7 +34,7 @@ public abstract class DataConsumer <T> implements Consumer {
 				log.fatal(e);	
 			}
 		}
-		log.info("Data Consumer Thread Stopped");
+		log.info("Data Consumer Thread Processing Finished");
 	}
 	protected void initializeQueue(LinkedBlockingQueue<T> list){
 		this.sharedEntity = list;
@@ -42,6 +42,7 @@ public abstract class DataConsumer <T> implements Consumer {
 	}
 	protected void linkChildObject(Consumer consumer){
 		this.childConsumer=consumer;
+		log.info("Child Consumer linked to Consumer Thread.");
 	}
 	/**
 	 * @param liveFlag the liveFlag to set

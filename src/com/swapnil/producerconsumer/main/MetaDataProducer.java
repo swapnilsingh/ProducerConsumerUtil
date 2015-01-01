@@ -23,31 +23,21 @@ public class MetaDataProducer extends DataGenerator<SharedEntity> {
 	 * @param blockingDeque
 	 */
 	public MetaDataProducer(LinkedBlockingQueue<SharedEntity> list,MetaDataConsumer metaDataConsumer) {
-		log.info("Producer Initlized");
 		super.initializeQueue(list);
 		this.metaDataConsumer = metaDataConsumer;
+		log.info("Producer Initlized");
 	}
 
 	private void pushMetaDataToQueue(SharedEntity entity) throws InterruptedException{
 		super.push(entity);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.swapnil.producerconsumer.interfaces.Producer#setLiveFlag()
-	 */
-	@Override
-	public void stopProducerThread(Boolean flag) {
-		super.setLiveFlag(flag);
-		log.info("Producer Stopped");
-	}
-
-	/* (non-Javadoc)
-	 * @see com.swapnil.producerconsumer.interfaces.Producer#performTask()
-	 */
+	
 	@Override
 	public void performTask() throws InterruptedException {
+		log.info("Producer Thread performTaskMethod called.");
 		for(int i=1;i<=10;i++){
-			push(new MetaDataSharedEntiry(i,Integer.toString(i)+"_Name"));
+			pushMetaDataToQueue(new MetaDataSharedEntiry(i,Integer.toString(i)+"_Name"));
 		}
 		this.metaDataConsumer.setLiveFlag(false);
 	}
